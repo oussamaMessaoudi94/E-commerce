@@ -1,0 +1,27 @@
+<body>
+	
+
+    <app-nav-user></app-nav-user>>
+    <table class="table table-dark" style="margin-top: 5%;">
+        <thead>
+          <tr>
+            
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let check of check">
+          <tr>
+            <th scope="row">{{check.fName}}</th>
+            <td>{{check.lName}}</td>
+            <td>{{check.aEmail}}</td>
+            <td>{{check.phone}}</td>
+            <td><button type="button" class="btn btn-danger" >Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </body>

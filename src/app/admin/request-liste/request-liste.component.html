@@ -1,0 +1,27 @@
+<body>
+	
+
+<app-nav-admin></app-nav-admin>>
+<table class="table table-dark" style="margin-top: 5%;">
+	<thead>
+	  <tr>
+		
+		<th scope="col">First Name</th>
+		<th scope="col">Last Name</th>
+		<th scope="col">Email</th>
+		<th scope="col">Phone</th>
+		<th scope="col">Action</th>
+	  </tr>
+	</thead>
+	<tbody *ngFor="let checkout of checkout">
+	  <tr>
+		<th scope="row">{{checkout.fName}}</th>
+		<td>{{checkout.lName}}</td>
+		<td>{{checkout.aEmail}}</td>
+		<td>{{checkout.phone}}</td>
+		<td><button type="button" class="btn btn-danger" (click)="invoice(checkout._id)">Invoice</button></td>
+	  </tr>
+	</tbody>
+  </table>
+
+</body>

@@ -1,0 +1,82 @@
+<body style="margin-top: 5%;">
+    <app-nav></app-nav>
+    <div class="site-wrap">
+
+
+
+        <section class="login_box_area section_gap" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="login_box_img">
+                            <img class="img-fluid" src="assets/images/bg_2.jpg" alt="">
+                            <div class="hover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6"  >
+                        <div  class="login_form_inner" >
+                            <h3 style="text-align: center; color: black; font-weight: bold;">{{title}} Sign up please</h3>
+                            <form  [formGroup]='signupForm'>
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" id="firstName" name="name"
+                                        placeholder="First name" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'FirstName'" formControlName="firstName" required="required" [(ngModel)]="user.firstName">
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <input type="text" class="form-control" id="lastName" name="name"
+                                        placeholder="Last Name" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'LastName'" formControlName="lastName" required="required" [(ngModel)]="user.lastName">
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <input type="email" class="form-control" id="email" name="name" placeholder="Email"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" formControlName="email" required="required" [(ngModel)]="user.email">
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <input type="password" class="form-control" id="pwd" name="name"
+                                        placeholder="Password" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Password'" formControlName="password" required="required" [(ngModel)]="user.password">
+                                </div>
+ 
+                                <div class="col-md-12 form-group">
+                                    <input type="tel" class="form-control" id="tel" name="name" placeholder="Tel"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'TEl'" formControlName="tel" required="required" [(ngModel)]="user.tel">
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <button type="submit" value="submit" class="btn btn-danger btn-block"
+                                        id="primary-btn" (click)="signup(signupForm.value)">signUp</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div class="site-section bg-image overlay"
+            style="background-image: url('assets/images/hero_bg_2.jpg'); margin-top: 5%;">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-7">
+                        <h3 class="text-white">GO</h3>
+                        <p class="mb-0"><a href="/signin" class="btn btn-outline-white">Sign in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>

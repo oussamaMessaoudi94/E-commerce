@@ -1,0 +1,100 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<body>
+<div class="container" style="margin-top: 5%;" id="imprime">
+    <div class="row">
+        <div class="col-xs-12">
+    		<div class="invoice-title" style="text-align: center;">
+				
+    			<h2>Invoice  </h2> <br>  <h3>{{date}}</h3>
+    		</div>
+    		<hr>
+    		<div class="row">
+
+    			<div>
+        			<h3>Shipped To:</h3><br>
+					<ul>
+						<li>Name : {{invoice.fName}} {{invoice.lName}}</li>
+						<li>country : {{invoice.country}}</li>
+						<li>Adress : {{invoice.adress}}</li>
+						<li>phone : {{invoice.phone}}</li>
+					</ul>
+    					
+    					
+    					
+    					
+    				
+    			</div>
+    		</div>
+    		<div class="row">
+
+    			<div class="col-xs-12 text-right">
+    				<address >
+    					<strong>Order Date:</strong><br>
+    					{{time  | date:'medium'}}<br><br>
+    				</address>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    
+    <div class="row">
+    	<div class="col-md-12">
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+    				<h3 class="panel-title"><strong>Order summary</strong></h3>
+    			</div>
+    			<div class="panel-body">
+    				<div class="table-responsive">
+    					<table class="table table-condensed">
+    						<thead>
+                                <tr>
+        							<td><strong>Products</strong></td>
+        							<td class="text-center"><strong>Price</strong></td>
+        							<td class="text-center"><strong>Quantity</strong></td>
+        							<td class="text-right"><strong>Totals</strong></td>
+                                </tr>
+    						</thead>
+    						<tbody  >
+    							<!-- foreach ($order->lineItems as $line) or some such thing here -->
+    							<tr *ngFor="let carts of carts">
+    								<td>{{carts.productName}}</td>
+    								<td class="text-center">{{carts.price.toLocaleString()}} $</td>
+    								<td class="text-center">{{carts.numberShop}}</td>
+    								<td class="text-right">{{carts.somme.toLocaleString()}} $</td>
+    							</tr>
+
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Total HT</strong></td>
+    								<td class="no-line text-right">{{x.toLocaleString()}} $</td><br>
+    							</tr>
+								<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Total TVA 7%</strong></td>
+    								<td class="no-line text-right">{{((x * 7)/100).toLocaleString()}} $</td><br>
+    							</tr>
+								<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Total TTC</strong></td>
+    								<td class="no-line text-right">{{TTC.toLocaleString()}} $</td><br>
+    							</tr>
+    						</tbody>
+							<p style="color: black;font-weight: bold;margin-top: 3%;">
+								Arrété le(a) présent(e) à la somme de :
+							</p>
+							<div style="color: black;font-weight: bold;margin-top: -2%;">{{num}}</div>
+    					</table>
+						
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>
+</body>

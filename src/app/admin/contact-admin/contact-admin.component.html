@@ -1,0 +1,25 @@
+<body>
+	
+
+    <app-nav-admin></app-nav-admin>>
+    <table class="table table-dark" style="margin-top: 5%;">
+        <thead>
+          <tr>
+            
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let contact of contact">
+          <tr>
+            <th scope="row">{{contact.firstName}}</th>
+            <td>{{contact.lastName}}</td>
+            <td>{{contact.email}}</td>
+           
+            <td><button type="button" class="btn btn-danger" (click)="detail(contact._id)">Detail</button><button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="del(contact._id)" >Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </body>

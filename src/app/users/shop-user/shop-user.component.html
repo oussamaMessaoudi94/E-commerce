@@ -1,0 +1,103 @@
+<body>
+  <div class="site-navbar py-2">
+
+    <div class="search-wrap">
+      <div class="container">
+        <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+        <div >
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching produit" required="required" >
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <div class="site-logo">
+            <a href="/home-admin" class="js-logo-clone"><strong class="text-primary">Pharma</strong>tive</a>
+          </div>
+        </div>
+        <div class="main-nav d-none d-lg-block">
+          <nav class="site-navigation text-right text-md-center" role="navigation">
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+  
+              <li class="active" style="margin-left:100px;"><a href="/home-user">Home</a></li>
+              <li><a href="shop-user">Store</a></li>
+              <li><a href="request-user">request List</a></li>
+              <li><a href="about-user">About</a></li>
+              <li><a href="contact-user">Contact</a></li>
+              <li style="margin-left: 100px;"><a href="/profil-admin">{{user.firstName}} {{user.lastName}}</a></li>
+            </ul>
+          </nav>
+        </div>
+      
+          <div class="icons" >
+            <a href="#" class="icons-btn d-inline-block js-search-open" ><span class="icon-search"></span></a>
+            <a  href="/cart-admin" class="icons-btn d-inline-block bag">
+              <span class="icon-shopping-bag"></span>
+              <span class="number">{{carts.length}}</span>
+            </a>
+            <!-- <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+                class="icon-menu"></span></a> -->
+          </div>
+          <a (click)="logout()"><i  class="fa fa-sign-out" style="font-size: 24px;color: black;margin-top: 10px;"></i></a>
+      </div>
+    </div>
+  </div>
+      <div class="site-wrap">
+    
+    
+      
+    
+        <div class="bg-light py-3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mb-0"><a href="/home-user">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-0 text-lg-right">
+             
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="site-section bg-light">
+          <div class="container">
+            
+            
+        
+            <div class="row" >
+              <div class="col-sm-6 col-lg-4 text-center item mb-4 item-v2" style="size: 10%;" *ngFor="let product of product">
+                <a (click)="goShop(product._id)"  > <img src="{{product.img}}" alt="Image"></a>
+                <h3 class="text-dark"><a  (click)="goShop(product._id)">{{product.productName}}</a></h3>
+                <p class="price">{{product.price}}$</p>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12 text-center">
+                <div class="site-block-27">
+                  <ul>
+                    <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    
+   
+    
+    
+</body>
